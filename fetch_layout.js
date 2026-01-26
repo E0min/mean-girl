@@ -1,9 +1,11 @@
 
 const fs = require('fs');
 
-const FILE_KEY = 'ZFTdUUuZqXcENxLWKvNcUy';
-const NODE_ID = '1135:56';
-const TOKEN = 'figd_643dLk2nhboUE3mblGYpqGp_YxQ9VKlDoCBfXCTO';
+require('dotenv').config();
+
+const FILE_KEY = process.env.FILE_KEY;
+const NODE_ID = process.env.NODE_ID;
+const TOKEN = process.env.TOKEN;
 
 async function fetchNode(retries = 3) {
     const url = `https://api.figma.com/v1/files/${FILE_KEY}/nodes?ids=${encodeURIComponent(NODE_ID)}&depth=1`;
