@@ -4,7 +4,7 @@ const fs = require('fs');
 require('dotenv').config();
 
 const FILE_KEY = process.env.FILE_KEY;
-const NODE_ID = process.env.NODE_ID;
+const NODE_ID = process.argv[2] || process.env.NODE_ID;
 const TOKEN = process.env.TOKEN;
 
 async function fetchNode(retries = 3) {

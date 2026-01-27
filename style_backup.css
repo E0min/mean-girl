@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #fff;
     color: #000;
@@ -47,6 +53,7 @@ a {
     position: relative;
     width: 100vw;
     height: 100vh;
+    margin-top: 0;
     /* Full viewport */
     background: #000;
     overflow: hidden;
@@ -570,4 +577,217 @@ a {
     font-weight: 300;
     font-size: 0.8vw;
     opacity: 0.9;
+}
+/* =========================================
+   8. ALL FILMS PAGE STYLES
+   ========================================= */
+
+/* Header */
+.section-header {
+    padding: 20px 40px;
+    background: #fff;
+    margin-bottom: 40px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.site-title {
+    font-family: 'Oswald', sans-serif;
+    color: #EA71DA; /* Pink color from design */
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mini-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.mini-nav a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    color: #EA71DA;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 96px;
+    line-height: 0.9;
+    color: #111;
+    margin: 0;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.arrow-down {
+    color: #EA71DA;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 15px;
+    color: #ccc;
+    font-size: 24px;
+}
+
+.section-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.right-align {
+    text-align: right;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    line-height: 0.8;
+}
+
+/* Hotgirls Grid (Masonry-ish Layout) */
+.hotgirls-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+.hg-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Specific item sizing based on visual estimation */
+.item-1 { grid-column: span 1; height: 400px; }
+.item-2 { grid-column: span 2; height: 400px; }
+
+.item-3 { grid-column: span 1; height: 600px; grid-row: span 2; } /* Tall portrait */
+.item-4 { grid-column: span 2; height: 300px; } /* Wide landscape */
+
+.item-5 { grid-column: span 1; height: 300px; }
+.item-6 { grid-column: span 1; height: 400px; } 
+
+.hg-item .placeholder-img {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
+
+.hg-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    background: rgba(255,255,255,0.8);
+    padding: 2px 5px;
+}
+
+/* AllFilms Grid */
+.allfilms-grid-sec {
+    margin-bottom: 100px;
+}
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.film-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.film-card .placeholder-img {
+    height: 250px; /* Smaller than hotgirls */
+    background: #e5e5e5;
+    width: 100%;
+}
+
+.film-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Text List Section */
+.text-list-sec {
+    position: relative;
+    padding: 50px 0;
+    margin-bottom: 100px;
+}
+
+.large-text-list {
+    list-style: none;
+}
+
+.large-text-list li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.large-text-list li:hover {
+    color: #000;
+}
+
+.large-text-list li sup {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    vertical-align: super;
+    margin-left: 5px;
+}
+
+.show-more {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Overlay Image */
+.overlay-image-container {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 300px;
+    height: 400px;
+    background: #ccc;
+    z-index: 10;
+    /* Normally hidden until hover, but visual shows it present */
+    display: block; 
 }
