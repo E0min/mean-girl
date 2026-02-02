@@ -1,6 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Mean Girls Project Loaded');
 
+    // MAIN CUSTOM CURSOR LOGIC
+    const mainCursor = document.createElement('div');
+    mainCursor.classList.add('custom-cursor');
+    document.body.appendChild(mainCursor);
+
+    document.addEventListener('mousemove', (e) => {
+        mainCursor.style.display = 'block';
+        mainCursor.style.left = e.clientX + 'px';
+        mainCursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (!e.relatedTarget && !e.toElement) {
+            mainCursor.style.display = 'none';
+        }
+    });
+    document.addEventListener('mouseenter', () => {
+        mainCursor.style.display = 'block';
+    });
+
     // Example interaction: Log clicks on movie items
     const movies = document.querySelectorAll('.movie-item');
     movies.forEach(movie => {

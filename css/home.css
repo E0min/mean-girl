@@ -27,19 +27,34 @@
     opacity: 0.8;
 }
 
-.site-title {
+/* Header Overrides for Home Page */
+.section-header.home-header-overlay {
     position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Oswald', sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 0;
+    z-index: 100;
+    padding-top: 2.6042vw;
+    /* 50px */
+}
+
+.home-header-overlay .site-title {
     color: #C45481;
-    /* Pink color */
-    font-size: 48px;
-    font-weight: 300;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    z-index: 20;
+    /* Primary Pink */
+    text-shadow: none;
+    /* Ensure other properties from collections.css generally apply, just override color */
+}
+
+.home-header-overlay .mini-nav a {
+    color: #C45481;
+    /* Use Pink for nav links too, or maybe #ECECEC based on original?
+       Original center-nav was #ECECEC (light gray). 
+       User's "Left" image shows "Mean girls" in Red/Pink and nav items in Red/Pink too? 
+       Let's look at the uploaded image. 
+       The left image shows "All Films", "Collections" etc in RED/PINK. 
+       So #C45481 is likely correct. */
 }
 
 /* Nav */
@@ -274,6 +289,8 @@
     justify-content: space-between;
 }
 
-.award-icon {
-    font-size: 0.5208vw;
+
+/* Ensure Home Page Cursor is Pink even if collections.css is loaded */
+.custom-cursor {
+    background-image: url('../images/svg/cursor_pink.svg') !important;
 }

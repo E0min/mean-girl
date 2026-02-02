@@ -195,8 +195,30 @@ a {
     letter-spacing: 0.0521vw;
 }
 
-.footer-pill-text span:last-child {
-    font-weight: 300;
-    font-size: 0.8vw;
-    opacity: 0.9;
+
+/* Custom Cursor */
+body,
+a,
+button,
+input {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5.8333vw;
+    /* 112px at 1920px */
+    height: 5.9896vw;
+    /* 115px at 1920px */
+    background-image: url('../images/svg/cursor_pink.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    /* Centered on mouse */
+    display: none;
+    /* Hidden until JS activates it */
 }

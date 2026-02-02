@@ -1,6 +1,7 @@
 /* Header */
 .section-header {
-    padding: 0px 1.0417vw;
+    padding: 2.6042vw 1.0417vw 0 1.0417vw;
+    /* 50px top padding */
     background: #fff;
     margin-bottom: 2.0833vw;
 }
@@ -22,7 +23,8 @@
     font-weight: 300;
     text-decoration: underline;
     text-underline-offset: 0.2604vw;
-    padding: 1.0417vw 0.0000vw;
+    padding: 0 0 1.0417vw 0;
+    /* Removed top padding */
 }
 
 .mini-nav {
