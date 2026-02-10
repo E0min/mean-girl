@@ -196,6 +196,45 @@ a {
 }
 
 
+/* ===== Shared Header ===== */
+.section-header {
+    padding: 2.6042vw 1.0417vw 0 1.0417vw;
+    background: #fff;
+    margin-bottom: 2.0833vw;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.1250vw;
+    gap: 4.4792vw;
+}
+
+.site-title {
+    font-family: 'Oswald', sans-serif;
+    color: #C45481;
+    font-size: 2.5000vw;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-offset: 0.2604vw;
+    padding: 0 0 1.0417vw 0;
+}
+
+.mini-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.mini-nav a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    color: #C45481;
+    text-decoration: none;
+}
+
 /* Custom Cursor */
 body,
 a,

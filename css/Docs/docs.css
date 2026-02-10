@@ -1,0 +1,218 @@
+/* ===== Docs Page Header ===== */
+.section-header {
+    padding: 2.6042vw 1.0417vw 0 1.0417vw;
+    background: #fff;
+    margin-bottom: 2.0833vw;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.1250vw;
+    gap: 4.4792vw;
+}
+
+.site-title {
+    font-family: 'Oswald', sans-serif;
+    color: #C45481;
+    font-size: 2.5000vw;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-offset: 0.2604vw;
+    padding: 0 0 1.0417vw 0;
+}
+
+.mini-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.mini-nav a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    color: #C45481;
+    text-decoration: none;
+}
+
+/* ===== Docs Hero / Title ===== */
+.docs-hero {
+    margin-top: 6.7708vw;
+}
+
+.docs-title-svg {
+    width: 19.4271vw;
+    height: auto;
+    display: block;
+}
+
+/* ===== Tabs ===== */
+.docs-tabs {
+    display: flex;
+    align-items: center;
+    gap: 3.1250vw;
+    margin-top: 1.0417vw;
+}
+
+.tab {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 6.6667vw;
+    color: #2B2929;
+    cursor: pointer;
+}
+
+.tab.active {
+    text-decoration: underline;
+    text-underline-offset: 0.4167vw;
+}
+
+.tab-arrow {
+    width: 5.8333vw;
+    height: auto;
+    margin-left: auto;
+}
+
+/* ===== Article Cards ===== */
+.docs-articles {
+    margin-top: 5.2083vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5.2083vw;
+}
+
+.article-card {
+    display: grid;
+    grid-template-columns: 62.5000vw 1fr;
+    gap: 2.0833vw;
+    align-items: start;
+}
+
+.article-card.reverse {
+    grid-template-columns: 1fr 62.5000vw;
+}
+
+/* ===== Article Image ===== */
+.article-img {
+    width: 100%;
+    height: 39.0625vw;
+    border-radius: 0.4688vw;
+    overflow: hidden;
+    box-shadow: 0 0.2083vw 0.2083vw rgba(0, 0, 0, 0.25);
+}
+
+.article-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== Article Info ===== */
+.article-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 39.0625vw;
+    padding-top: 1.4583vw;
+}
+
+.article-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 1.2500vw;
+    color: #9F9BA8;
+    letter-spacing: 0.0521vw;
+}
+
+.article-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5.7292vw;
+    line-height: 1;
+    color: #000;
+    margin: 0;
+    letter-spacing: -0.0260vw;
+}
+
+.read-more {
+    display: flex;
+    align-items: center;
+    gap: 2.4740vw;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 2.0833vw;
+    color: #000;
+    margin-bottom: 1.0417vw;
+}
+
+.read-more-arrow {
+    width: 3.8802vw;
+    height: 1.4063vw;
+}
+
+/* ===== Reverse card: text left ===== */
+.article-card.reverse .article-info {
+    padding-left: 5.2083vw;
+}
+
+/* ===== Tall Image (Arco) ===== */
+.article-img.tall {
+    height: 89.1146vw;
+}
+
+.article-img.tall + .article-info,
+.article-card .article-img.tall ~ .article-info {
+    height: 89.1146vw;
+}
+
+.article-card.reverse:has(.article-img.tall) .article-info {
+    height: 89.1146vw;
+}
+
+/* ===== Overlay Text on Image ===== */
+.article-img.overlay-card {
+    position: relative;
+}
+
+.img-overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 5.0000vw;
+    line-height: 5.6250vw;
+    color: #DDD6C8;
+    padding: 0.5208vw 1.0417vw;
+    pointer-events: none;
+}
+
+/* ===== Tab Content Visibility ===== */
+.docs-articles.hidden {
+    display: none;
+}
+
+/* ===== Show More ===== */
+.show-more {
+    display: flex;
+    align-items: center;
+    gap: 1.0417vw;
+    margin-top: 5.2083vw;
+    cursor: pointer;
+}
+
+.show-more-arrow {
+    width: 2.0313vw;
+    height: auto;
+}
+
+.show-more span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 1.8750vw;
+    color: #2B2929;
+    text-align: center;
+}

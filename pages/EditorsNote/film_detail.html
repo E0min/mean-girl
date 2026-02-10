@@ -4,176 +4,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anatomy of a Fall - Mean Girls</title>
+    <title>Sirāt - Editor's Note - Mean Girls</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/collections.css"> <!-- Added collections.css for header/footer styles -->
     <link rel="stylesheet" href="../../css/film_detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
     <div id="app">
-        <!-- 1. Header (Reused from collections.html) -->
-        <header class="section-header">
-            <div class="top-nav">
-                <a href="../index.html" class="site-title">Mean girls</a>
-                <nav class="mini-nav">
+        <!-- 1. Hero Section with Overlay Header -->
+        <div class="editor-hero">
+            <img src="../../images/page/editors_note/sirat_hero.png" alt="Sirāt" class="editor-hero-img">
+            <header class="editor-header-overlay">
+                <div class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="../index.html" class="editor-site-title">Mean girls</a>
+                <nav class="editor-nav">
                     <a href="../all_films.html">All Films</a>
                     <a href="../collections/collections_lists.html">Collections</a>
-                    <a href="#">Docs</a>
+                    <a href="../Docs/docs.html">Docs</a>
                     <a href="#">About</a>
                 </nav>
-            </div>
-            <!-- Optional: Detailed Page Specific Header Info if needed, or keep minimal like collections -->
-        </header>
+            </header>
+        </div>
 
         <div class="content-wrapper">
-            <!-- 2. Hero Section -->
-            <section class="section film-hero">
-                <div class="hero-image-container">
-                    <img src="http://localhost:3845/assets/65053c83f27be4e62238656c0ae8e958b44637de.png"
-                        alt="Anatomy of a Fall Scene" class="hero-bg-img">
-
-                    <div class="hero-text-overlay">
-                        <h1 class="main-title">ANATOMY OF<br>A FALL</h1>
-                        <div class="header-meta">
-                            <!-- Meta moved here or kept in hero as per design -->
-                            <span class="meta-item">★ 2023</span>
-                            <span class="meta-item">DRAMA / THRILLER</span>
-                            <span class="meta-item">152 MIN</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-icons">
-                        <span class="icon">💙</span>
-                        <span class="icon">💎</span>
-                        <span class="icon">💛</span>
+            <!-- 2. Article -->
+            <article class="editor-article">
+                <!-- Article Header -->
+                <div class="article-header">
+                    <span class="article-date">JAN 26, 2026</span>
+                    <h1 class="article-title"><span class="bold">T</span>he Film Everyone Is Arguing <br>About: Sirāt</h1>
+                    <div class="article-meta-row">
+                        <span class="article-share">SHARE</span>
+                        <span class="article-author">Eun-seon Lee, Film Journalist (sisa@sisajournal.com)</span>
                     </div>
                 </div>
-            </section>
 
-            <!-- 3. Intro Section -->
-            <section class="section film-intro">
-                <div class="intro-grid">
-                    <div class="poster-area">
-                        <img src="http://localhost:3845/assets/0b6b1c73808451fd84a161625acb54d40e68a9fc.png"
-                            alt="Poster" class="film-poster">
-                    </div>
-                    <div class="synopsis-area">
-                        <div class="arrow-icon">
-                            <svg width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="black">
-                                <path d="M0 10H38M30 2L38 10L30 18" stroke-width="1" />
-                            </svg>
-                        </div>
-                        <p class="synopsis-text">
-                            What to do with a MACHINE that acts like a human? This is a question...
-                            <br><br>
-                            A thriller of real psychological depth...
-                        </p>
-                        <div class="intro-credits">
-                            <p>DIRECTED BY <strong>JUSTINE TRIET</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <!-- Article Body -->
+                <div class="article-body">
+                    <h2 class="article-heading">A Journey of Adventure Filmed in the Desert&mdash;<br>The Spectacle of Cinema Revealed by the &ldquo;Real&rdquo;</h2>
 
-            <!-- 4. Review Banner -->
-            <section class="section review-banner">
-                <div class="banner-image-container">
-                    <img src="http://localhost:3845/assets/5f8304d2c248628ca1f51fe3cbde3575dddb54da.png" alt="Scene"
-                        class="banner-img">
-                    <div class="banner-quote">
-                        "A thriller of real<br>psychological depth"
-                        <span class="source">The Telegraph</span>
-                    </div>
-                </div>
-            </section>
+                    <p>Philosopher Friedrich Nietzsche once declared, &ldquo;I would believe only in a god who could dance.&rdquo;
+                    It was a paradoxical way of saying that only what affirms human freedom can become a true form of faith.
+                    By that logic, how should we understand the god who chooses the dancers that fill Sirat?
+                    Winner of the Jury Prize at the 78th Cannes Film Festival,
+                    the film also claimed another trophy: Best Soundtrack.
+                    This award recognizes the cinematic achievement forged
+                    by the experimental music that echoes across the desert.
+                    In the film, that music becomes nothing less than an electronic requiem &mdash;
+                    a lament that consoles the death and despair drifting through the vast sands.
+                    God and music, human fate and the desert. Somewhere in between them stands Sirat,
+                    a film that has stunned audiences around the world since its first screening in Cannes.</p>
 
-            <!-- 5. Director Spotlight -->
-            <section class="section director-spotlight">
-                <div class="director-grid">
-                    <div class="director-img">
-                        <img src="http://localhost:3845/assets/8c8fbf2cac5cd3c0d21cf5cc6b8606d1d259c349.png"
-                            alt="Justine Triet" class="bw-portrait">
-                    </div>
-                    <div class="director-info">
-                        <h2 class="director-name">JUSTINE<br>TRIET</h2>
-                    </div>
-                </div>
-            </section>
+                    <h3 class="article-subheading">People Who Keep Dancing at the End of the World</h3>
 
-            <!-- 6. Gallery -->
-            <section class="section film-gallery">
-                <div class="gallery-header">
-                    <h3>GALLERY</h3>
-                    <svg width="30" height="15" viewBox="0 0 30 15" fill="none" class="arrow-right">
-                        <path d="M0 7.5H28M22 1.5L28 7.5L22 13.5" stroke="black" stroke-width="1" />
-                    </svg>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="http://localhost:3845/assets/166d6249bdbe88cdc377ef45b665a07b11d9f137.png"
-                            alt="Gallery 1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="http://localhost:3845/assets/feed64e36fe6216b66c8a1cc135df1f4e65a7ad4.png"
-                            alt="Gallery 2">
-                    </div>
-                </div>
-            </section>
+                    <p>Sirat refers, in Islam, to the bridge that connects this world to the afterlife.
+                    The film opens with a chilling warning tied to that place:
+                    &ldquo;Let those who seek to cross beware.
+                    The path is thinner than a strand of hair and sharper than the edge of a blade.&rdquo;</p>
 
-            lfjs <!-- 7. Film List Vertical -->
-            <section class="section film-list-vertical">
-                <h2 class="list-title">The Room Next Door</h2>
-                <ul class="films-menu">
-                    <li class="active">Immaculate</li>
-                    <li>Oldboy</li>
-                    <li>Materialists</li>
-                    <li>The Zone of Interest</li>
-                    <li>Father Mother Sister Brother</li>
-                </ul>
-                <div class="show-more">
-                    + SHOW MORE
-                </div>
+                    <p>As the frailty of humanity&mdash;so earnestly reaching for salvation&mdash;begins to feel almost awkward,
+                    the screen soon opens onto a vast desert, clouds of dust rising into the air.
+                    Amid the frantic movements of workers hauling and stacking massive, heavy objects,
+                    the imposing presence of giant speakers slowly comes into view.</p>
 
-                <div class="list-image-overlay">
-                    <img src="http://localhost:3845/assets/2d7d39bde6c8518ffe9bce697cf9428bfbee09c4.png" alt="Overlay">
-                </div>
-            </section>
+                    <figure class="article-image">
+                        <img src="../../images/page/editors_note/sirat_scene_1.png" alt="Sirāt scene">
+                    </figure>
 
-            <!-- 8. Footer (Reused from collections.html) -->
+                    <p>From rows of speakers stacked against the backdrop of steep canyons, electronic music pours out &mdash;
+                    low, pounding beats that throb against the heart. It is the beginning of a party that goes on day and night.
+                    A rave is a gathering where people dance to electronic music in large spaces like warehouses or clubs.
+                    The ravers who embrace this culture and roam in pursuit of
+                    alternative communal living surrender themselves,
+                    as one character puts it, to &ldquo;music not meant to be listened to, but to be danced to.&rdquo;</p>
+
+                    <p>Sirat opens with the fastest and most effective passage between the movie theater and the desert rave.
+                    That is also why every raver in the film is played not by professional actors, but by real ravers.
+                    As crowds fall into ecstatic,
+                    self-forgetting movement&mdash;dancing freely to their own rhythms, day and night&mdash;
+                    two strangers who seem utterly out of place appear,
+                    and Sirat truly begins.</p>
+
+                    <p>They are Luis (Sergi L&oacute;pez), who has come in search of his daughter who left home to attend a rave,
+                    and his young son Esteban (Bruno N&uacute;&ntilde;ez Arjona), who have wandered all the way here.</p>
+
+                    <p>While the party in the desert continues, the outside world begins to feel as though war has broken out.
+                    Lines of military transport vehicles carrying civilians heighten the atmosphere of unease.
+                    Still, neither the will to dance nor the determination to find family is easily broken.
+                    When a group led by Jade (Jade Oukid) breaks away from the convoy to head toward another desert rave,
+                    Luis and Esteban&mdash;having no other option&mdash;follow them.
+                    As the truck carrying them races through the wasteland
+                    with no clear destination, the radio broadcasts reports of civilians trying to cross borders and statements
+                    from international organizations.</p>
+
+                    <p>With the end of the world seemingly just inches away, they do not stop&mdash;
+                    even in a barren landscape where nothing but dust fills the air.</p>
+
+                    <figure class="article-image">
+                        <img src="../../images/page/editors_note/sirat_scene_2.png" alt="Sirāt scene">
+                    </figure>
+
+                    <p>The desert of Sirat passes through the post-apocalyptic imagination embodied by the Mad Max series,
+                    yet becomes a nomads&rsquo; realm that reconfigures the harshness of the
+                    Western into an entirely different landscape.
+                    It overwhelms not through grandeur or beauty,
+                    but through the opposite: an indifferent, boundless vastness.
+                    Its immensity is so extreme that it begins to feel almost like outer space.
+                    Within it, the characters&rsquo; goals &mdash; to reach another rave, to find their family &mdash; slowly begin to fade.
+                    The desert road grows ever more treacherous, to the point of separating life from death,
+                    yet they keep moving forward. There is no other choice.</p>
+
+                    <figure class="article-image">
+                        <img src="../../images/page/editors_note/sirat_scene_3.png" alt="Sirāt scene">
+                    </figure>
+
+                    <h3 class="article-subheading">Confronting the Fragility of Life and a Cruel Fate</h3>
+
+                    <p>As the journey continues,
+                    a loose sense of solidarity begins to form between Jade&rsquo;s group and Luis and his son.
+                    Even without any shared interests, the simple acts of sharing food and fuel,
+                    of offering compassion and help, become their oasis.
+                    The humanity they show by refusing to betray one another gives the audience a moment of reassurance.
+                    Though the characters&rsquo; individual backstories are never fully spelled out,
+                    the bodies of the ravers &mdash; some missing arms or legs &mdash; begin to reveal the lives they have lived.</p>
+
+                    <p>From this point on, however, director Oliver Laxe deliberately turns against the audience&rsquo;s expectations.
+                    A succession of tragedies, each defying prediction, comes crashing down with shocking force.
+                    The desert on which these people now stand &mdash;
+                    freed from all social and cultural systems that once surrounded them &mdash;
+                    becomes a testing ground where only two paths remain clear: life or death.
+                    Caught in the relentless pulse of the music, the roar of engines, and the threatening howl of the wind,
+                    the sudden arrival of silence becomes Sirat&rsquo;s most ultimate form of terror.</p>
+
+                    <p>In the face of unrelenting suffering, everyone turns to God &mdash; yet neither recognition nor mercy appears.
+                    If a god does exist in Sirat, it is surely one that dispenses only merciless and cruel punishment.
+                    The characters become beings who have entrusted their fate to a roll of the dice,
+                    and the desert begins to resemble a vast purgatory that imprisons them.
+                    Only then does the truth sink in: this is a path thinner than a strand of hair and sharper than a blade.</p>
+
+                    <p>Life is cruel precisely because even what lies right before our eyes cannot be predicted &mdash;
+                    and that, too, is human destiny.
+                    We try to protect ourselves by inventing chains of cause and effect to explain the incomprehensible,
+                    yet not every shape of life can be accounted for in this way. Death, above all, defies it.
+                    Luis&rsquo;s journey, as he slowly comes to accept all of this,
+                    begins to resemble that of a broken hero who has lost everything.
+                    As the desert once again transforms into a spiritual and mythic landscape, the rave music &mdash;
+                    once nothing but noise &mdash; begins to sound like music to Luis as well.
+                    The dancing bodies now seem like rituals that expose pain and resist the fragility of life.</p>
+
+                    <p>And yet this is not a film that surrenders to the defeatist idea that everything is governed
+                    by an uncontrollable fate.
+                    On the contrary, it speaks more clearly about life in the face of suffering and death.
+                    Because life is unpredictable,
+                    we must endure and cross the barren desert and keep moving forward.
+                    Even when an age of chaos and apocalypse arrives,
+                    we must not stop. Rather than standing still in fear of the death beneath our feet,
+                    we must dance &mdash; even if only a dance of oblivion &mdash;
+                    to confront our pain. What becomes clear, above all, is that we must not stop.</p>
+
+                    <p>The act of filming this movie in a real desert,
+                    facing sandstorms with a film camera in hand, is itself a path of adventure beyond safe choices.
+                    Space, music, and a story designed to shock all exist to push cinematic immersion to its extreme.
+                    In an age where nearly everything the human mind can imagine can be rendered as an image,
+                    the spectacle that only the &ldquo;real&rdquo; can create &mdash; as in this film&rsquo;s experiment &mdash;
+                    may be the cinema&rsquo;s final proving ground.</p>
+
+                    <p class="article-source">Source: Sisa Journal (<a href="https://www.sisajournal.com" target="_blank">https://www.sisajournal.com</a>)</p>
+                </div>
+            </article>
+
+            <!-- 3. About Section -->
             <section class="section about">
                 <h2 class="section-title">ABOUT</h2>
                 <div class="about-grid">
                     <div class="about-card">
-                        <h4>FILMS</h4>
-                        <div class="card-bottom">
-                            <a href="#">All</a>
+                        <h4>Films</h4>
+                        <div class="card-bottom vertical-links">
+                            <a href="../all_films.html">All</a>
+                            <a href="#">Upcoming</a>
                         </div>
                     </div>
 
                     <div class="about-card">
-                        <h4>EDITS</h4>
+                        <h4>edits</h4>
                         <div class="card-bottom vertical-links">
-                            <a href="#">Home</a>
-                            <a href="#">Editor's Note</a>
+                            <a href="../index.html" class="underline-link">Home</a>
+                            <a href="#">Docs</a>
                             <a href="../collections/collections_lists.html">Collections</a>
                         </div>
                     </div>
 
                     <div class="about-card">
-                        <h4>MEAN</h4>
+                        <h4>MEan</h4>
                         <div class="mean-content">
                             <p class="en-desc"><strong>MEAN</strong> is an editorial platform<br>built around selection,
                                 interpretation, and record.</p>
-                            <p class="en-desc"><strong>Films</strong> are not listed, but
-                                curated.<br><strong>Texts</strong> are not reviews, but
-                                positions.<br><strong>Collections</strong> are not categories, but perspectives.</p>
+                            <p class="en-desc">Films are not listed, but curated.<br>Texts are not reviews, but
+                                positions.<br>Collections are not categories, but perspectives.</p>
                             <p class="kr-desc"><strong>MEAN</strong>은 선택, 해석, 기록을 중심으로<br>영화를 다루는 에디토리얼 플랫폼입니다.</p>
                             <p class="kr-desc">영화는 나열되지 않고 선별되며,<br>텍스트는 리뷰가 아닌 관점으로,<br>컬렉션은 분류가 아닌 시선으로 구성됩니다.</p>
                         </div>
@@ -193,14 +229,19 @@
                 </div>
             </section>
 
+            <!-- 4. Footer -->
             <footer class="main-footer">
                 <div class="footer-logo">
                     <div class="footer-logo-wrapper">
                         <img src="../../images/svg/me n.svg" alt="ME N" class="men-svg">
                         <div class="footer-pill">
-                            <img src="../../images/image 1446.png" alt="Anatomy of a Fall" class="footer-img-bg">
+                            <img src="../../images/page/editors_note/no_other_choice_footer.png" alt="No Other Choice" class="footer-img-bg">
                         </div>
                     </div>
+                </div>
+                <div class="footer-film-info">
+                    <span class="footer-film-title">No Other Choice</span>
+                    <span class="footer-film-detail">2025, Directed by Park Chan Wook</span>
                 </div>
             </footer>
         </div>
