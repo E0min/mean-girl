@@ -417,6 +417,8 @@
 /* ===== 7. Film List ===== */
 .showcase-film-list {
     margin-top: 5.2083vw;
+    position: relative;
+    overflow: hidden;
 }
 
 .showcase-text-list {
@@ -432,6 +434,38 @@
     color: #2B2929;
     letter-spacing: -0.02em;
     margin-bottom: 1.0417vw;
+    cursor: pointer;
+    transition: color 0.2s;
+    position: relative;
+    z-index: 2;
+}
+
+.showcase-text-list li:hover {
+    color: #000;
+}
+
+.showcase-film-list .list-hover-img {
+    position: absolute;
+    top: 50%;
+    right: 1.0417vw;
+    transform: translateY(-50%);
+    width: 57.2917vw;
+    height: auto;
+    aspect-ratio: 1100 / 860;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.showcase-film-list .list-hover-img .hover-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
 }
 
 .showcase-text-list li sup {

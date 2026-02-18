@@ -6,6 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     mainCursor.classList.add('custom-cursor');
     document.body.appendChild(mainCursor);
 
+    // Detect cursor color from site title
+    const siteTitle = document.querySelector('.site-title') || document.querySelector('.showcase-site-title') || document.querySelector('.editor-site-title');
+    let cursorColor = '#C45481';
+    if (siteTitle) {
+        const computed = getComputedStyle(siteTitle).color;
+        if (computed) cursorColor = computed;
+    }
+
+    // Generate SVG cursor with the detected color
+    const cursorSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="114" height="117" viewBox="0 0 114 117" fill="none"><path d="M57.25 0.75V115.75M57.25 115.75L0.75 60.75M57.25 115.75L112.75 60.75" stroke="${cursorColor}" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+    mainCursor.style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(cursorSVG)}")`;
+
     document.addEventListener('mousemove', (e) => {
         mainCursor.style.display = 'block';
         mainCursor.style.left = e.clientX + 'px';
@@ -21,24 +33,33 @@ document.addEventListener('DOMContentLoaded', () => {
         mainCursor.style.display = 'block';
     });
 
-    // Example interaction: Log clicks on movie items
-    const movies = document.querySelectorAll('.movie-item');
-    movies.forEach(movie => {
-        movie.addEventListener('click', () => {
-            console.log(`Clicked on: ${movie.innerText}`);
+    // Cursor direction change on interactive elements
+    const interactiveEls = document.querySelectorAll('a, button, .social-card, .film-card, .gallery-item, .list-row, .view-icon, .show-more, .showcase-show-more, .large-text-list li, .showcase-text-list li, .tab, .hg-item');
+    interactiveEls.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            const dir = el.getAttribute('data-cursor-dir') || 'right';
+            mainCursor.classList.remove('cursor-right', 'cursor-left');
+            mainCursor.classList.add(`cursor-${dir}`);
+        });
+        el.addEventListener('mouseleave', () => {
+            mainCursor.classList.remove('cursor-right', 'cursor-left');
         });
     });
     // List Hover interaction
-    const listItems = document.querySelectorAll('.large-text-list li');
+    const listItems = document.querySelectorAll('.large-text-list li, .showcase-text-list li');
     const hoverImgContainer = document.querySelector('.list-hover-img');
     const hoverPreviewImg = hoverImgContainer ? hoverImgContainer.querySelector('.hover-preview-img') : null;
+
+    // Determine image base path based on page depth
+    const isSubDir = document.querySelector('.showcase-text-list') !== null;
+    const imgBasePath = isSubDir ? '../../images/page/all_films/' : '../images/page/all_films/';
 
     if (listItems.length && hoverImgContainer && hoverPreviewImg) {
         listItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 const imgPath = item.getAttribute('data-image');
                 if (imgPath) {
-                    hoverPreviewImg.src = `../images/page/all_films/${imgPath}`;
+                    hoverPreviewImg.src = `${imgBasePath}${imgPath}`;
                 }
                 hoverImgContainer.style.opacity = '1';
             });

@@ -251,7 +251,6 @@ input {
     /* 112px at 1920px */
     height: 5.9896vw;
     /* 115px at 1920px */
-    background-image: url('../images/svg/cursor_pink.svg');
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -260,4 +259,13 @@ input {
     /* Centered on mouse */
     display: none;
     /* Hidden until JS activates it */
+    transition: transform 0.2s ease;
+}
+
+.custom-cursor.cursor-right {
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.custom-cursor.cursor-left {
+    transform: translate(-50%, -50%) rotate(90deg);
 }
