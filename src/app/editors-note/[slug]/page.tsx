@@ -54,25 +54,23 @@ export default function FilmDetailPage() {
     );
   }
 
+  // Determine theme color for Header (Showcase only)
+  const getThemeColor = () => {
+    if (movie.theme === "theme-pink") return "#334671"; // Anora (Navy)
+    if (movie.theme === "theme-navy") return "#1C2854"; // Anatomy (Dark Navy)
+    if (movie.theme === "theme-slate") return "#FCE618"; // Parasite (Yellow)
+    if (movie.theme === "theme-blue") return "#FCE618"; // Triangle (Yellow)
+    if (movie.theme === "theme-red") return "#FCE618"; // No Other Choice, Accident (Yellow)
+    return "#FCE618"; // Default showcase yellow
+  };
+
   // --- 1. Article Layout (Past Lives, Sirāt) ---
   if (movie.layout === "article") {
     return (
       <main className="theme-white">
         <div className="editor-hero">
           <img src={movie.heroImg} alt={movie.title} className="editor-hero-img" />
-          <header className="editor-header-overlay">
-            <div className="hamburger-btn">
-              <span></span>
-              <span></span>
-            </div>
-            <Link href="/" className="editor-site-title">Mean girls</Link>
-            <nav className="editor-nav">
-              <Link href="/all-films">All Films</Link>
-              <Link href="/collections">Collections</Link>
-              <Link href="/docs">Docs</Link>
-              <a href="#">About</a>
-            </nav>
-          </header>
+          <Header isHome={true} customColor="#fff" />
         </div>
 
         <div className="content-wrapper">
@@ -116,21 +114,17 @@ export default function FilmDetailPage() {
       {/* 1. Hero Section */}
       <div className="showcase-hero">
         <img src={movie.heroImg} alt={movie.title} className="showcase-hero-img" />
-        <header className="showcase-overlay">
-          <div className="showcase-hamburger">
-            <span></span>
-            <span></span>
-          </div>
-          <Link href="/" className="showcase-site-title">Mean girls</Link>
-          <nav className="showcase-nav">
-            <Link href="/all-films">All Films</Link>
-            <Link href="/collections">Collections</Link>
-            <Link href="/docs">Docs</Link>
-            <a href="#">About</a>
-          </nav>
-          <h1 className="showcase-movie-title" dangerouslySetInnerHTML={{ __html: movie.title }} />
-          <span className="showcase-year">{movie.year}</span>
-          <div className="showcase-hero-wishlist">
+        
+        {/* Header Overlay exactly like / page */}
+        <Header isHome={true} customColor={getThemeColor()} />
+
+        <header className="showcase-overlay" style={{ pointerEvents: "none" }}>
+          {/* Movie info remains fixed in position relative to hero container */}
+          <h1 className="showcase-movie-title" 
+              style={{ pointerEvents: "auto", fontWeight: 200 }} 
+              dangerouslySetInnerHTML={{ __html: movie.title }} />
+          <span className="showcase-year" style={{ pointerEvents: "auto" }}>{movie.year}</span>
+          <div className="showcase-hero-wishlist" style={{ pointerEvents: "auto" }}>
             <WishlistButton id={`${movie.slug}-hero`} />
           </div>
         </header>
@@ -308,7 +302,7 @@ function AboutSection() {
         <div className="about-card">
           <h4>EDITS</h4>
           <div className="card-bottom vertical-links">
-            <Link href="/">Home</Link>
+            <Link href="/"><u>Home</u></Link>
             <Link href="/docs">Docs</Link>
             <Link href="/collections">Collections</Link>
           </div>
