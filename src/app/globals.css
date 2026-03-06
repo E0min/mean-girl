@@ -191,6 +191,18 @@ a {
     padding: 2.6042vw 1.0417vw 0 1.0417vw;
     background: #fff;
     margin-bottom: 2.0833vw;
+    transition: background 0.3s ease;
+}
+
+.section-header.home-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 0;
+    z-index: 100;
+    padding-top: 2.6042vw;
 }
 
 .top-nav {
