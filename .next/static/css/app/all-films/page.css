@@ -1,3 +1,6 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/app/all-films/all-films.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
 /* All Films Page Styles (Synchronized with Original) */
 
 /* Header (page-specific) */
@@ -68,12 +71,12 @@
     display: flex;
     flex-direction: column;
     gap: 1.0417vw;
-    flex: 534; /* Ratio based on width */
+    flex: 534 1; /* Ratio based on width */
     min-width: 0;
 }
 
 .hg-col.center {
-    flex: 775; /* Center column is wider */
+    flex: 775 1; /* Center column is wider */
 }
 
 .hg-item-wrapper {
@@ -128,7 +131,9 @@
 .films-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.0417vw;
     column-gap: 1.0417vw;
+    grid-row-gap: 7.0312vw;
     row-gap: 7.0312vw; /* 135px */
     margin-top: 1.0417vw;
 }
@@ -306,7 +311,7 @@
 }
 
 .list-col.meta {
-    flex: 1;
+    flex: 1 1;
     display: flex;
     flex-direction: column;
     gap: 0.2604vw;
@@ -351,3 +356,4 @@
 .hidden {
     display: none !important;
 }
+

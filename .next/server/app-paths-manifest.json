@@ -1,0 +1,7 @@
+{
+  "/collections/page": "app/collections/page.js",
+  "/collections/collections-item/page": "app/collections/collections-item/page.js",
+  "/docs/page": "app/docs/page.js",
+  "/editors-note/[slug]/page": "app/editors-note/[slug]/page.js",
+  "/all-films/page": "app/all-films/page.js"
+}

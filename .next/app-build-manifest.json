@@ -1,0 +1,46 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/collections/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/collections/page.css",
+      "static/chunks/app/collections/page.js"
+    ],
+    "/all-films/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/all-films/page.css",
+      "static/chunks/app/all-films/page.js"
+    ],
+    "/docs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/docs/page.css",
+      "static/chunks/app/docs/page.js"
+    ],
+    "/editors-note/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/editors-note/[slug]/page.css",
+      "static/chunks/app/editors-note/[slug]/page.js"
+    ],
+    "/collections/collections-item/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/collections/collections-item/page.css",
+      "static/chunks/app/collections/collections-item/page.js"
+    ]
+  }
+}
