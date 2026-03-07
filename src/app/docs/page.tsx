@@ -20,6 +20,7 @@ export default function Docs() {
       reverse: false,
       textSide: "right" as const,
       imgSide: "left" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -29,6 +30,7 @@ export default function Docs() {
       reverse: true,
       textSide: "left" as const,
       imgSide: "right" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -38,6 +40,7 @@ export default function Docs() {
       reverse: false,
       textSide: "right" as const,
       imgSide: "left" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -47,6 +50,7 @@ export default function Docs() {
       reverse: true,
       textSide: "left" as const,
       imgSide: "right" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -56,6 +60,7 @@ export default function Docs() {
       reverse: false,
       textSide: "right" as const,
       imgSide: "left" as const,
+      readMore: true,
     },
   ];
 
@@ -68,6 +73,7 @@ export default function Docs() {
       reverse: true,
       textSide: "left" as const,
       imgSide: "right" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -77,6 +83,7 @@ export default function Docs() {
       reverse: false,
       textSide: "right" as const,
       imgSide: "left" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -86,6 +93,7 @@ export default function Docs() {
       reverse: true,
       textSide: "left" as const,
       imgSide: "right" as const,
+      readMore: true,
     },
     {
       label: "ARTICLE",
@@ -95,6 +103,7 @@ export default function Docs() {
       reverse: false,
       textSide: "right" as const,
       imgSide: "left" as const,
+      readMore: true,
     },
   ];
 
@@ -156,7 +165,11 @@ export default function Docs() {
             <div className="footer-logo-wrapper">
               <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
               <div className="footer-pill">
-                <img src="/images/page/docs/past_lives.png" alt="Footer" className="footer-img-bg" />
+                <img
+                  src="/images/page/docs/past_lives.png"
+                  alt="Footer"
+                  className="footer-img-bg"
+                />
               </div>
             </div>
           </div>

@@ -16,13 +16,29 @@ export default function Home() {
   const [listHoverOpacity, setListHoverOpacity] = useState(0);
 
   const textListFilms = [
-    { name: "The Room Next Door", year: 2024, img: "hover/the_room_next_door.png" },
-    { name: "On Becoming a Guinea Fowl", year: 2025, img: "hover/on_becoming_guinea_fowl.png" },
+    {
+      name: "The Room Next Door",
+      year: 2024,
+      img: "hover/the_room_next_door.png",
+    },
+    {
+      name: "On Becoming a Guinea Fowl",
+      year: 2025,
+      img: "hover/on_becoming_guinea_fowl.png",
+    },
     { name: "Immaculate", year: 2024, img: "hover/immaculate.png" },
     { name: "Oldboy", year: 2003, img: "hover/oldboy.png" },
     { name: "Materialists", year: 2025, img: "hover/materialists.png" },
-    { name: "The Zone of Interest", year: 2024, img: "hover/the_zone_of_interest.png" },
-    { name: "Father Mother Sister Brother", year: 2026, img: "hover/father_mother_sister_brother.png" },
+    {
+      name: "The Zone of Interest",
+      year: 2024,
+      img: "hover/the_zone_of_interest.png",
+    },
+    {
+      name: "Father Mother Sister Brother",
+      year: 2026,
+      img: "hover/father_mother_sister_brother.png",
+    },
   ];
 
   return (
@@ -78,10 +94,7 @@ export default function Home() {
           <div className="grid-2-col">
             <Link href="/editors-note/no-other-choice" className="card">
               <div className="card-img rect-large">
-                <img
-                  src="/images/page/home/no_other_choice.png"
-                  alt="No Other Choice"
-                />
+                <img src="/images/page/home/no_other_choice.png" alt="No Other Choice" />
               </div>
               <div className="card-info">
                 <span className="card-title">No other choice</span>
@@ -93,11 +106,7 @@ export default function Home() {
               </div>
               <div className="card-info">
                 <span className="card-title">Parasite</span>
-                <img
-                  src="/images/page/home/award_icon.png"
-                  alt=""
-                  className="card-award-icon"
-                />
+                <img src="/images/page/home/award_icon.png" alt="" className="card-award-icon" />
               </div>
             </Link>
           </div>
@@ -121,7 +130,15 @@ export default function Home() {
                     <span className="docs-year">2024</span>
                   </div>
                 </Link>
-                <div className="docs-wishlist" style={{ position: "absolute", bottom: "3.125vw", left: "1.6146vw", zIndex: 10 }}>
+                <div
+                  className="docs-wishlist"
+                  style={{
+                    position: "absolute",
+                    bottom: "3.125vw",
+                    left: "1.6146vw",
+                    zIndex: 10,
+                  }}
+                >
                   <WishlistButton id="past-lives" />
                 </div>
               </div>
@@ -139,7 +156,15 @@ export default function Home() {
                     <span className="docs-year">2021</span>
                   </div>
                 </div>
-                <div className="docs-wishlist red" style={{ position: "absolute", bottom: "3.125vw", left: "1.6146vw", zIndex: 10 }}>
+                <div
+                  className="docs-wishlist red"
+                  style={{
+                    position: "absolute",
+                    bottom: "3.125vw",
+                    left: "1.6146vw",
+                    zIndex: 10,
+                  }}
+                >
                   <WishlistButton id="spencer" variant="red" />
                 </div>
               </div>
@@ -164,11 +189,7 @@ export default function Home() {
               </h3>
             </div>
             <div className="photo-card">
-              <img
-                src="/images/page/home/sean_baker.png"
-                alt="Sean Baker"
-                className="portrait"
-              />
+              <img src="/images/page/home/sean_baker.png" alt="Sean Baker" className="portrait" />
             </div>
           </div>
         </section>
@@ -189,20 +210,13 @@ export default function Home() {
                     alt=""
                     className="academy-icon"
                   />
-                  <img
-                    src="/images/page/home/award_icon.png"
-                    alt=""
-                    className="award-badge"
-                  />
+                  <img src="/images/page/home/award_icon.png" alt="" className="award-badge" />
                 </span>
               </div>
             </Link>
             <Link href="/editors-note/triangle-of-sadness" className="card">
               <div className="card-img rect-small">
-                <img
-                  src="/images/page/home/triangle_of_sadness.png"
-                  alt="Triangle of Sadness"
-                />
+                <img src="/images/page/home/triangle_of_sadness.png" alt="Triangle of Sadness" />
               </div>
               <div className="card-caption">
                 <span>Triangle of Sadness</span>
@@ -212,20 +226,13 @@ export default function Home() {
                     alt=""
                     className="academy-icon"
                   />
-                  <img
-                    src="/images/page/home/award_icon.png"
-                    alt=""
-                    className="award-badge"
-                  />
+                  <img src="/images/page/home/award_icon.png" alt="" className="award-badge" />
                 </span>
               </div>
             </Link>
             <Link href="/editors-note/anatomy-of-a-fall" className="card">
               <div className="card-img rect-small">
-                <img
-                  src="/images/page/home/anatomy_of_a_fall.png"
-                  alt="Anatomy of a Fall"
-                />
+                <img src="/images/page/home/anatomy_of_a_fall.png" alt="Anatomy of a Fall" />
               </div>
               <div className="card-caption">
                 <span>Anatomy of a Fall</span>
@@ -235,11 +242,7 @@ export default function Home() {
                     alt=""
                     className="academy-icon"
                   />
-                  <img
-                    src="/images/page/home/award_icon.png"
-                    alt=""
-                    className="award-badge"
-                  />
+                  <img src="/images/page/home/award_icon.png" alt="" className="award-badge" />
                 </span>
               </div>
             </Link>
@@ -253,11 +256,7 @@ export default function Home() {
               <div className="card-caption">
                 <span>It Was Just an Accident</span>
                 <span className="award-icons">
-                  <img
-                    src="/images/page/home/award_icon.png"
-                    alt=""
-                    className="award-badge"
-                  />
+                  <img src="/images/page/home/award_icon.png" alt="" className="award-badge" />
                 </span>
               </div>
             </Link>
@@ -265,20 +264,6 @@ export default function Home() {
         </section>
 
         <TextHoverList />
-
-        <EditorialRow
-          label="EDITOR'S NOTE"
-          title={
-            <>
-              Space & Time:
-              <br />
-              A Note from Celine Song
-            </>
-          }
-          img="/images/page/editors_note/past_lives_hero.png"
-          link="/editors-note/past-lives"
-          readMore={true}
-        />
 
         <AboutSection />
 

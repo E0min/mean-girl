@@ -44,9 +44,10 @@ export default function EditorialRow({
           {title}
         </h2>
         {readMore && (
-          <span className={readMoreClass}>
-            READ MORE <span className="arrow">→</span>
-          </span>
+          <div className="read-more">
+            <img src="/images/page/docs/arrow_right.svg" alt="" className="read-more-arrow" />
+            READ MORE
+          </div>
         )}
       </div>
       <div className={imageClass}>
