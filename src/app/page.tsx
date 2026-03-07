@@ -1,10 +1,27 @@
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import WishlistButton from "@/components/WishlistButton";
+import AboutSection from "@/components/AboutSection";
+import { useState } from "react";
 import "./home.css";
 
 export default function Home() {
+  const [hoverImg, setHoverImg] = useState("");
+  const [listHoverOpacity, setListHoverOpacity] = useState(0);
+
+  const textListFilms = [
+    { name: "The Room Next Door", year: 2024, img: "hover/the_room_next_door.png" },
+    { name: "On Becoming a Guinea Fowl", year: 2025, img: "hover/on_becoming_guinea_fowl.png" },
+    { name: "Immaculate", year: 2024, img: "hover/immaculate.png" },
+    { name: "Oldboy", year: 2003, img: "hover/oldboy.png" },
+    { name: "Materialists", year: 2025, img: "hover/materialists.png" },
+    { name: "The Zone of Interest", year: 2024, img: "hover/the_zone_of_interest.png" },
+    { name: "Father Mother Sister Brother", year: 2026, img: "hover/father_mother_sister_brother.png" },
+  ];
+
   return (
     <main>
       <Header isHome={true} />
@@ -89,7 +106,7 @@ export default function Home() {
           <div className="docs-carousel">
             <div className="docs-track">
               <div className="docs-slide-wrapper" style={{ position: "relative" }}>
-                <Link href="/editors-note/past-lives" className="docs-slide">
+                <Link href="/docs/past-lives" className="docs-slide">
                   <img
                     src="/images/page/home/past_lives.png"
                     alt="Past Lives"
@@ -244,63 +261,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section className="section about">
-          <h2 className="section-title">ABOUT</h2>
-          <div className="about-grid">
-            <div className="about-card">
-              <h4>Films</h4>
-              <div className="card-bottom">
-                <Link href="/all-films">All</Link>
-                <br />
-                <a href="#">Upcoming</a>
-              </div>
-            </div>
-
-            <div className="about-card">
-              <h4>edits</h4>
-              <div className="card-bottom vertical-links">
-                <Link href="/">
-                  <u>Home</u>
-                </Link>
-                <Link href="/docs">Docs</Link>
-                <Link href="/collections">Collections</Link>
-              </div>
-            </div>
-
-            <div className="about-card">
-              <h4>MEan</h4>
-              <div className="mean-content">
-                <p className="en-desc"><strong>MEAN</strong> is an editorial platform<br />built around selection, interpretation, and record.</p>
-                <p className="en-desc">Films are not listed, but curated.<br />Texts are not reviews, but positions.<br />Collections are not categories, but perspectives.</p>
-                <p className="kr-desc"><strong>MEAN</strong>은 선택, 해석, 기록을 중심으로<br />영화를 다루는 에디토리얼 플랫폼입니다.</p>
-                <p className="kr-desc">영화는 나열되지 않고 선별되며,<br />텍스트는 리뷰가 아닌 관점으로,<br />컬렉션은 분류가 아닌 시선으로 구성됩니다.</p>
-              </div>
-            </div>
-
-            <div className="social-wrapper">
-              <div className="social-row top">
-                <div className="social-card">
-                  <i className="fab fa-instagram"></i>
-                </div>
-                <div className="social-card">
-                  <i className="fab fa-tiktok"></i>
-                </div>
-              </div>
-              <div className="social-row bottom">
-                <div className="social-card">
-                  <i className="fa-brands fa-x-twitter"></i>
-                </div>
-                <div className="social-card">
-                  <i className="fab fa-facebook-f"></i>
-                </div>
-                <div className="social-card">
-                  <i className="fab fa-youtube"></i>
-                </div>
-              </div>
-            </div>
+        {/* Film List Section (Hover Preview) */}
+        <section className="section text-list-sec">
+          <ul className="large-text-list">
+            {textListFilms.map((item, idx) => (
+              <li
+                key={idx}
+                onMouseEnter={() => {
+                  setHoverImg(`/images/page/all_films/${item.img}`);
+                  setListHoverOpacity(1);
+                }}
+                onMouseLeave={() => setListHoverOpacity(0)}
+              >
+                {item.name} <sup>{item.year}</sup>
+              </li>
+            ))}
+          </ul>
+          <div className="show-more">
+            <span>SHOW MORE</span>
+          </div>
+          <div className="list-hover-img" style={{ opacity: listHoverOpacity }}>
+            <img src={hoverImg} alt="" className="hover-preview-img" />
           </div>
         </section>
+
+        <AboutSection />
 
         <Footer />
       </div>

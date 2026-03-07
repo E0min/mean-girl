@@ -7,8 +7,10 @@ export default function CustomCursor() {
   const [visible, setVisible] = useState(false);
   const [cursorColor, setCursorColor] = useState("#C45481");
   const [rotation, setRotation] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     // 1. Detect cursor color from site title
     const updateCursorColor = () => {
       const siteTitle = document.querySelector(".site-title") || 
@@ -78,6 +80,8 @@ export default function CustomCursor() {
       observer.disconnect();
     };
   }, [visible]);
+
+  if (!isMounted) return null;
 
   const cursorSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="114" height="117" viewBox="0 0 114 117" fill="none"><path d="M57.25 0.75V115.75M57.25 115.75L0.75 60.75M57.25 115.75L112.75 60.75" stroke="${cursorColor}" stroke-width="1.5" stroke-linecap="round"/></svg>`;
 

@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
 import Link from "next/link";
 import WishlistButton from "@/components/WishlistButton";
 import { useEffect, useState } from "react";
@@ -17,8 +18,6 @@ export default function FilmDetailPage() {
   const slug = params?.slug as string;
   const [movie, setMovie] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [hoverImg, setHoverImg] = useState("");
-  const [listHoverOpacity, setListHoverOpacity] = useState(0);
 
   useEffect(() => {
     if (!slug) return;
@@ -92,18 +91,13 @@ export default function FilmDetailPage() {
 
           <AboutSection />
           
-          <footer className="main-footer">
-            <div className="footer-logo">
-              <div className="footer-logo-wrapper">
-                <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
-                <div className="footer-pill">
-                  <img src={movie.footerImg || movie.heroImg} alt="" className="footer-img-bg" />
-                </div>
-              </div>
-            </div>
-          </footer>
+          <Footer 
+            pillImg={movie.footerImg || movie.heroImg}
+            title={movie.title}
+            year={movie.year}
+            director={movie.credits?.directedBy}
+          />
         </div>
-        <Footer />
       </main>
     );
   }
@@ -234,98 +228,15 @@ export default function FilmDetailPage() {
           </section>
         )}
 
-        {/* 6. Film List */}
-        <section className="showcase-film-list">
-          <ul className="showcase-text-list">
-            {[
-              { name: "The Room Next Door", year: 2024, img: "hover/the_room_next_door.png" },
-              { name: "On Becoming a Guinea Fowl", year: 2025, img: "hover/on_becoming_guinea_fowl.png" },
-              { name: "Immaculate", year: 2024, img: "hover/immaculate.png" },
-              { name: "Oldboy", year: 2003, img: "hover/oldboy.png" },
-              { name: "Materialists", year: 2025, img: "hover/materialists.png" },
-              { name: "The Zone of Interest", year: 2024, img: "hover/the_zone_of_interest.png" },
-            ].map((item, idx) => (
-              <li
-                key={idx}
-                onMouseEnter={() => {
-                  setHoverImg(`/images/page/all_films/${item.img}`);
-                  setListHoverOpacity(1);
-                }}
-                onMouseLeave={() => setListHoverOpacity(0)}
-              >
-                {item.name} <sup>{item.year}</sup>
-              </li>
-            ))}
-          </ul>
-          <div className="showcase-show-more">
-            <span>SHOW MORE</span>
-          </div>
-          <div className="list-hover-img" style={{ opacity: listHoverOpacity }}>
-            <img src={hoverImg} alt="" className="hover-preview-img" />
-          </div>
-        </section>
-
         <AboutSection />
 
-        <footer className="main-footer">
-          <div className="footer-logo">
-            <div className="footer-logo-wrapper">
-              <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
-              <div className="footer-pill">
-                <img src={movie.footerImg || movie.heroImg} alt="" className="footer-img-bg" />
-              </div>
-            </div>
-          </div>
-          <div className="footer-film-info">
-            <span className="footer-film-title" dangerouslySetInnerHTML={{ __html: movie.title.replace('<br>', ' ') }} />
-            <span className="footer-film-detail">{movie.year}, Directed by {movie.credits?.directedBy || "Various"}</span>
-          </div>
-        </footer>
+        <Footer 
+          pillImg={movie.footerImg || movie.heroImg}
+          title={movie.title}
+          year={movie.year}
+          director={movie.credits?.directedBy}
+        />
       </div>
-      <Footer />
     </main>
-  );
-}
-
-function AboutSection() {
-  return (
-    <section className="section about">
-      <h2 className="section-title">ABOUT</h2>
-      <div className="about-grid">
-        <div className="about-card">
-          <h4>FILMS</h4>
-          <div className="card-bottom vertical-links">
-            <Link href="/all-films">All</Link>
-            <a href="#">Upcoming</a>
-          </div>
-        </div>
-        <div className="about-card">
-          <h4>EDITS</h4>
-          <div className="card-bottom vertical-links">
-            <Link href="/"><u>Home</u></Link>
-            <Link href="/docs">Docs</Link>
-            <Link href="/collections">Collections</Link>
-          </div>
-        </div>
-        <div className="about-card">
-          <h4>MEAN</h4>
-          <div className="mean-content">
-            <p className="en-desc"><strong>MEAN</strong> is an editorial platform<br />built around selection, interpretation, and record.</p>
-            <p className="kr-desc"><strong>MEAN</strong>은 선택, 해석, 기록을 중심으로<br />영화를 다루는 에디토리얼 플랫폼입니다.</p>
-          </div>
-        </div>
-        <div className="social-wrapper">
-          <div className="social-row top">
-            <div className="social-card"><i className="fab fa-instagram"></i></div>
-            <div className="social-card"><i className="fab fa-tiktok"></i></div>
-          </div>
-          <div className="social-row bottom">
-            <div className="social-card"><i className="fa-brands fa-x-twitter"></i></div>
-            <div className="social-card"><i className="fab fa-facebook-f"></i></div>
-            <div className="social-card"><i className="fab fa-youtube"></i></div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }

@@ -1,27 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import FilmCard from "@/components/FilmCard";
+import FilmListView from "@/components/FilmListView";
+import AboutSection from "@/components/AboutSection";
 import "./all-films.css";
 
 export default function AllFilms() {
   const [view, setView] = useState<"grid" | "list">("grid");
-  const [hoverImg, setHoverImg] = useState("");
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [cursorImg, setCursorImg] = useState("");
-  const [cursorVisible, setCursorVisible] = useState(false);
-  const [listHoverOpacity, setListHoverOpacity] = useState(0);
-
-  // Handle cursor follow image for List View
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const upcomingFilms = {
     col1: [
@@ -55,16 +43,6 @@ export default function AllFilms() {
     { name: "Anatomy of a Fall", img: "/images/page/home/anatomy_of_a_fall.png", slug: "anatomy-of-a-fall", academy: true, award: true },
     { name: "Triangle of Sadness", img: "/images/page/home/triangle_of_sadness.png", slug: "triangle-of-sadness", academy: true, award: true },
     { name: "Sirat", img: "/images/page/all_films/sirat.png", comingSoon: true },
-  ];
-
-  const textListFilms = [
-    { name: "The Room Next Door", year: 2024, img: "hover/the_room_next_door.png" },
-    { name: "On Becoming a Guinea Fowl", year: 2025, img: "hover/on_becoming_guinea_fowl.png" },
-    { name: "Immaculate", year: 2024, img: "hover/immaculate.png" },
-    { name: "Oldboy", year: 2003, img: "hover/oldboy.png" },
-    { name: "Materialists", year: 2025, img: "hover/materialists.png" },
-    { name: "The Zone of Interest", year: 2024, img: "hover/the_zone_of_interest.png" },
-    { name: "Father Mother Sister Brother", year: 2026, img: "hover/father_mother_sister_brother.png" },
   ];
 
   const listFilms = [
@@ -176,198 +154,22 @@ export default function AllFilms() {
           <section className="section allfilms-grid-sec">
             <h2 className="section-subtitle">AllFilms</h2>
             <div className="films-grid">
-              {gridFilms.map((f, i) => {
-                const CardContent = (
-                  <>
-                    <div className={`film-img ${f.comingSoon ? "coming-soon" : ""}`}>
-                      <img src={f.img} alt={f.name} />
-                      {f.comingSoon && <span className="coming-soon-label">Comming Soon</span>}
-                    </div>
-                    <div className="film-title-row">
-                      <span className="film-title">{f.name}</span>
-                      <span className="film-icons">
-                        {f.academy && <img src="/images/page/home/academy_triangle.png" alt="" className="film-academy-icon" />}
-                        {f.award && <img src="/images/page/home/award_icon.png" alt="" className="film-award-badge" />}
-                      </span>
-                    </div>
-                  </>
-                );
-
-                return f.slug ? (
-                  <Link key={i} href={`/editors-note/${f.slug}`} className="film-card">
-                    {CardContent}
-                  </Link>
-                ) : (
-                  <div key={i} className="film-card">
-                    {CardContent}
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-
-          {/* 3. Text List Section (Hover Preview) */}
-          <section className="section text-list-sec">
-            <ul className="large-text-list">
-              {textListFilms.map((item, idx) => (
-                <li
-                  key={idx}
-                  onMouseEnter={() => {
-                    setHoverImg(`/images/page/all_films/${item.img}`);
-                    setListHoverOpacity(1);
-                  }}
-                  onMouseLeave={() => setListHoverOpacity(0)}
-                >
-                  {item.name} <sup>{item.year}</sup>
-                </li>
+              {gridFilms.map((f, i) => (
+                <FilmCard key={i} {...f} />
               ))}
-            </ul>
-            <div className="show-more">
-              <span>SHOW MORE</span>
-            </div>
-            <div className="list-hover-img" style={{ opacity: listHoverOpacity }}>
-              <img src={hoverImg} alt="" className="hover-preview-img" />
             </div>
           </section>
         </div>
 
         {/* List View Container */}
         <div id="view-list" className={view === "list" ? "" : "hidden"}>
-          <div className="list-view-content">
-            {listFilms.map((item, idx) => {
-              const RowContent = (
-                <>
-                  <div className="list-col title">{item.title}</div>
-                  <div className="list-col meta">
-                    <div className="label">DIRECTOR</div>
-                    <div className="value">{item.dir}</div>
-                  </div>
-                  <div className="list-col meta">
-                    <div className="label">GENRE</div>
-                    <div className="value">{item.genre}</div>
-                  </div>
-                  <div className="list-col meta">
-                    <div className="label">RELEASE DATE</div>
-                    <div className="value">{item.year}</div>
-                  </div>
-                </>
-              );
-
-              return item.slug ? (
-                <Link
-                  key={idx}
-                  href={`/editors-note/${item.slug}`}
-                  className="list-row"
-                  onMouseEnter={() => {
-                    setCursorImg(`/images/page/all_films/posters/${item.img}`);
-                    setCursorVisible(true);
-                  }}
-                  onMouseLeave={() => setCursorVisible(false)}
-                >
-                  {RowContent}
-                </Link>
-              ) : (
-                <div
-                  key={idx}
-                  className="list-row"
-                  onMouseEnter={() => {
-                    setCursorImg(`/images/page/all_films/posters/${item.img}`);
-                    setCursorVisible(true);
-                  }}
-                  onMouseLeave={() => setCursorVisible(false)}
-                >
-                  {RowContent}
-                </div>
-              );
-            })}
-          </div>
+          <FilmListView films={listFilms} />
         </div>
 
-        {/* Cursor Follow Image */}
-        <div
-          id="cursor-img"
-          style={{
-            display: cursorVisible ? "block" : "none",
-            position: "fixed",
-            left: cursorPos.x + 20,
-            top: cursorPos.y + 20,
-            pointerEvents: "none",
-            zIndex: 9000,
-          }}
-        >
-          <img 
-            src={cursorImg} 
-            alt="" 
-            className="cursor-poster-img" 
-            style={{ 
-              width: "180px", 
-              height: "auto", 
-              borderRadius: "8px", 
-              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              backgroundColor: "#000"
-            }} 
-          />
-        </div>
-
-        {/* About & Footer */}
         <AboutSection />
 
-        <footer className="main-footer">
-          <div className="footer-logo">
-            <div className="footer-logo-wrapper">
-              <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
-              <div className="footer-pill">
-                <img src="/images/page/all_films/all_the_beauty.png" alt="Footer" className="footer-img-bg" />
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer pillImg="/images/page/all_films/all_the_beauty.png" />
       </div>
     </main>
-  );
-}
-
-function AboutSection() {
-  return (
-    <section className="section about">
-      <h2 className="section-title">ABOUT</h2>
-      <div className="about-grid">
-        <div className="about-card">
-          <h4>Films</h4>
-          <div className="card-bottom vertical-links">
-            <Link href="/all-films">All</Link>
-            <br />
-            <a href="#">Upcoming</a>
-          </div>
-        </div>
-        <div className="about-card">
-          <h4>edits</h4>
-          <div className="card-bottom vertical-links">
-            <Link href="/"><u>Home</u></Link>
-            <Link href="/docs">Docs</Link>
-            <Link href="/collections">Collections</Link>
-          </div>
-        </div>
-        <div className="about-card">
-          <h4>MEan</h4>
-          <div className="mean-content">
-            <p className="en-desc"><strong>MEAN</strong> is an editorial platform<br />built around selection, interpretation, and record.</p>
-            <p className="kr-desc"><strong>MEAN</strong>은 선택, 해석, 기록을 중심으로<br />영화를 다루는 에디토리얼 플랫폼입니다.</p>
-          </div>
-        </div>
-        <div className="social-wrapper">
-          <div className="social-row top">
-            <div className="social-card"><i className="fab fa-instagram"></i></div>
-            <div className="social-card"><i className="fab fa-tiktok"></i></div>
-          </div>
-          <div className="social-row bottom">
-            <div className="social-card"><i className="fa-brands fa-x-twitter"></i></div>
-            <div className="social-card"><i className="fab fa-facebook-f"></i></div>
-            <div className="social-card"><i className="fab fa-youtube"></i></div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
 import Link from "next/link";
 import "../collections.css";
 
@@ -60,57 +61,52 @@ export default function CollectionsItem() {
             />
           </div>
 
+          <div className="sb-hero-section">
+            <div className="sb-hero-portrait">
+              <img src="/images/page/collections/sean_baker.png" alt="Sean Baker" />
+            </div>
+            <div className="sb-hero-info">
+              <span className="sb-info-role">DIRECTOR OF ANORA</span>
+              <h3 className="sb-info-name">
+                SEAN<br />BAKER
+              </h3>
+              <p className="sb-info-quote">
+                “I don’t think you can pin this movie down and describe it easily as one thing. 
+                As the story and feeling changes, our approach and the language changes also.”
+              </p>
+            </div>
+          </div>
+
           <div className="hotgirls-three-columns">
             <div className="hg-col">
               {column1.map((f, i) => (
-                <div key={i} className="sb-grid-item" style={{ marginBottom: "2vw" }}>
+                <div key={i} className="sb-grid-item">
                   <div className={`hg-item ${f.type}`}>
-                    <img src={f.img} alt={f.name} style={{ borderRadius: "9px" }} />
+                    <img src={f.img} alt={f.name} />
                   </div>
-                  <span className="sb-grid-caption" style={{ 
-                    fontFamily: "var(--font-oswald), sans-serif",
-                    fontSize: "1.6667vw",
-                    fontWeight: 300,
-                    color: "#000",
-                    marginTop: "0.5vw",
-                    display: "block"
-                  }}>{f.name}</span>
+                  <span className="sb-grid-caption">{f.name}</span>
                 </div>
               ))}
             </div>
 
             <div className="hg-col center">
               {column2.map((f, i) => (
-                <div key={i} className="sb-grid-item" style={{ marginBottom: "2vw" }}>
+                <div key={i} className="sb-grid-item">
                   <div className={`hg-item ${f.type}`}>
-                    <img src={f.img} alt={f.name} style={{ borderRadius: "9px" }} />
+                    <img src={f.img} alt={f.name} />
                   </div>
-                  <span className="sb-grid-caption" style={{ 
-                    fontFamily: "var(--font-oswald), sans-serif",
-                    fontSize: "1.6667vw",
-                    fontWeight: 300,
-                    color: "#000",
-                    marginTop: "0.5vw",
-                    display: "block"
-                  }}>{f.name}</span>
+                  <span className="sb-grid-caption">{f.name}</span>
                 </div>
               ))}
             </div>
 
             <div className="hg-col">
               {column3.map((f, i) => (
-                <div key={i} className="sb-grid-item" style={{ marginBottom: "2vw" }}>
+                <div key={i} className="sb-grid-item">
                   <div className={`hg-item ${f.type}`}>
-                    <img src={f.img} alt={f.name} style={{ borderRadius: "9px" }} />
+                    <img src={f.img} alt={f.name} />
                   </div>
-                  <span className="sb-grid-caption" style={{ 
-                    fontFamily: "var(--font-oswald), sans-serif",
-                    fontSize: "1.6667vw",
-                    fontWeight: 300,
-                    color: "#000",
-                    marginTop: "0.5vw",
-                    display: "block"
-                  }}>{f.name}</span>
+                  <span className="sb-grid-caption">{f.name}</span>
                 </div>
               ))}
             </div>
@@ -132,49 +128,5 @@ export default function CollectionsItem() {
       </div>
       <Footer />
     </main>
-  );
-}
-
-function AboutSection() {
-  return (
-    <section className="section about">
-      <h2 className="section-title">ABOUT</h2>
-      <div className="about-grid">
-        <div className="about-card">
-          <h4>FILMS</h4>
-          <div className="card-bottom">
-            <Link href="/all-films">All</Link>
-          </div>
-        </div>
-        <div className="about-card">
-          <h4>EDITS</h4>
-          <div className="card-bottom vertical-links">
-            <Link href="/">Home</Link>
-            <Link href="/editors-note/anora">Editor's Note</Link>
-            <Link href="/collections">Collections</Link>
-          </div>
-        </div>
-        <div className="about-card">
-          <h4>MEAN</h4>
-          <div className="mean-content">
-            <p className="en-desc"><strong>MEAN</strong> is an editorial platform<br />built around selection, interpretation, and record.</p>
-            <p className="en-desc"><strong>Films</strong> are not listed, but curated.<br /><strong>Texts</strong> are not reviews, but positions.<br /><strong>Collections</strong> are not categories, but perspectives.</p>
-            <p className="kr-desc"><strong>MEAN</strong>은 선택, 해석, 기록을 중심으로<br />영화를 다루는 에디토리얼 플랫폼입니다.</p>
-            <p className="kr-desc">영화는 나열되지 않고 선별되며,<br />텍스트는 리뷰가 아닌 관점으로,<br />컬렉션은 분류가 아닌 시선으로 구성됩니다.</p>
-          </div>
-        </div>
-        <div className="social-wrapper">
-          <div className="social-row top">
-            <div className="social-card"><i className="fab fa-instagram"></i></div>
-            <div className="social-card"><i className="fab fa-tiktok"></i></div>
-          </div>
-          <div className="social-row bottom">
-            <div className="social-card"><i className="fa-brands fa-x-twitter"></i></div>
-            <div className="social-card"><i className="fab fa-facebook-f"></i></div>
-            <div className="social-card"><i className="fab fa-youtube"></i></div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
