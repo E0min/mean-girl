@@ -102,7 +102,7 @@
 }
 
 .article-title .bold {
-    font-weight: 700;
+    font-weight: 400; /* Regular weight instead of 700 */
 }
 
 .article-meta-row {

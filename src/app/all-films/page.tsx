@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FilmCard from "@/components/FilmCard";
 import FilmListView from "@/components/FilmListView";
 import AboutSection from "@/components/AboutSection";
+import TextHoverList from "@/components/TextHoverList";
 import "./all-films.css";
 
 export default function AllFilms() {
@@ -165,6 +166,8 @@ export default function AllFilms() {
         <div id="view-list" className={view === "list" ? "" : "hidden"}>
           <FilmListView films={listFilms} />
         </div>
+
+        <TextHoverList />
 
         <AboutSection />
 

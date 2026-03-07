@@ -85,6 +85,7 @@
     font-family: var(--font-bebas-neue), sans-serif;
     font-size: 12.5vw; /* 240px */
     color: #FCE618;
+    font-weight: 400; /* Regular weight */
     line-height: 0.88;
     letter-spacing: -0.75vw; /* -14.4px */
     margin: 0;
@@ -305,6 +306,7 @@
 .director-name {
     font-family: var(--font-bebas-neue), sans-serif;
     font-size: 12.5vw; /* 240px */
+    font-weight: 400; /* Regular weight */
     color: #1E1E1E;
     line-height: 0.85;
     letter-spacing: -0.75vw; /* -14.4px */
@@ -314,7 +316,7 @@
 .director-quote {
     font-family: var(--font-oswald), sans-serif;
     font-size: 1.0417vw; /* 20px */
-    font-weight: 400;
+    font-weight: 300; /* Lighter than before */
     color: #1E1E1E;
     letter-spacing: 0.0417vw; /* 0.8px */
     line-height: 1.4;
@@ -337,6 +339,7 @@
 .gallery-title {
     font-family: var(--font-bebas-neue), sans-serif;
     font-size: 3.2292vw; /* 62px */
+    font-weight: 400; /* Regular weight */
     color: #000;
     margin: 0;
 }
@@ -428,7 +431,7 @@
 .showcase-text-list li {
     font-family: var(--font-oswald), sans-serif;
     font-size: 8.0729vw; /* 155px */
-    font-weight: 500;
+    font-weight: 400; /* Changed from 500 to Regular */
     line-height: 0.9;
     color: #2B2929;
     letter-spacing: -0.02em;
@@ -620,7 +623,7 @@
     top: 36.1458vw;
     font-family: var(--font-oswald), sans-serif;
     font-size: 3.0208vw;
-    font-weight: 400;
+    font-weight: 300; /* Adjusted to be lighter/regular */
     color: #F2ECEB;
     letter-spacing: -0.0604vw;
     line-height: 1.1;

@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import TextHoverList from "@/components/TextHoverList";
 import Link from "next/link";
 import WishlistButton from "@/components/WishlistButton";
 import { useEffect, useState } from "react";
@@ -63,60 +64,20 @@ export default function FilmDetailPage() {
     return "#FCE618"; // Default showcase yellow
   };
 
-  // --- 1. Article Layout (Past Lives, Sirāt) ---
-  if (movie.layout === "article") {
-    return (
-      <main className="theme-white">
-        <div className="editor-hero">
-          <img src={movie.heroImg} alt={movie.title} className="editor-hero-img" />
-          <Header isHome={true} customColor="#fff" />
-        </div>
-
-        <div className="content-wrapper">
-          <article className="editor-article">
-            <div className="article-header">
-              <span className="article-date">JAN 27, 2026</span>
-              <h1 className="article-title">{movie.title}</h1>
-              <div className="article-meta-row">
-                <span className="article-share">SHARE</span>
-                <span className="article-author">Editor's Note</span>
-              </div>
-            </div>
-
-            <div 
-              className="article-body article-body-kr"
-              dangerouslySetInnerHTML={{ __html: movie.content }}
-            />
-          </article>
-
-          <AboutSection />
-          
-          <Footer 
-            pillImg={movie.footerImg || movie.heroImg}
-            title={movie.title}
-            year={movie.year}
-            director={movie.credits?.directedBy}
-          />
-        </div>
-      </main>
-    );
-  }
-
-  // --- 2. Showcase Layout (Anora, Parasite, etc.) ---
   return (
     <main className={movie.theme || "theme-pink"}>
       {/* 1. Hero Section */}
       <div className="showcase-hero">
         <img src={movie.heroImg} alt={movie.title} className="showcase-hero-img" />
-        
+
         {/* Header Overlay exactly like / page */}
         <Header isHome={true} customColor={getThemeColor()} />
 
         <header className="showcase-overlay" style={{ pointerEvents: "none" }}>
           {/* Movie info remains fixed in position relative to hero container */}
-          <h1 className="showcase-movie-title" 
-              style={{ pointerEvents: "auto", fontWeight: 200 }} 
-              dangerouslySetInnerHTML={{ __html: movie.title }} />
+          <h1 className="showcase-movie-title"
+            style={{ pointerEvents: "auto", fontWeight: 200 }}
+            dangerouslySetInnerHTML={{ __html: movie.title }} />
           <span className="showcase-year" style={{ pointerEvents: "auto" }}>{movie.year}</span>
           <div className="showcase-hero-wishlist" style={{ pointerEvents: "auto" }}>
             <WishlistButton id={`${movie.slug}-hero`} />
@@ -125,7 +86,6 @@ export default function FilmDetailPage() {
       </div>
 
       <div className="content-wrapper">
-        <img src="/images/page/editors_note/anora/gallery_arrow.svg" alt="" className="info-scroll-arrow" />
 
         {/* 2. Info Section */}
         <section className="showcase-info">
@@ -228,9 +188,10 @@ export default function FilmDetailPage() {
           </section>
         )}
 
+        <TextHoverList />
         <AboutSection />
 
-        <Footer 
+        <Footer
           pillImg={movie.footerImg || movie.heroImg}
           title={movie.title}
           year={movie.year}

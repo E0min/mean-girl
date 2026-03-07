@@ -3,10 +3,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import EditorialRow from "@/components/EditorialRow";
 import WishlistButton from "@/components/WishlistButton";
 import AboutSection from "@/components/AboutSection";
 import { useState } from "react";
 import "./home.css";
+
+import TextHoverList from "@/components/TextHoverList";
 
 export default function Home() {
   const [hoverImg, setHoverImg] = useState("");
@@ -261,29 +264,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Film List Section (Hover Preview) */}
-        <section className="section text-list-sec">
-          <ul className="large-text-list">
-            {textListFilms.map((item, idx) => (
-              <li
-                key={idx}
-                onMouseEnter={() => {
-                  setHoverImg(`/images/page/all_films/${item.img}`);
-                  setListHoverOpacity(1);
-                }}
-                onMouseLeave={() => setListHoverOpacity(0)}
-              >
-                {item.name} <sup>{item.year}</sup>
-              </li>
-            ))}
-          </ul>
-          <div className="show-more">
-            <span>SHOW MORE</span>
-          </div>
-          <div className="list-hover-img" style={{ opacity: listHoverOpacity }}>
-            <img src={hoverImg} alt="" className="hover-preview-img" />
-          </div>
-        </section>
+        <TextHoverList />
+
+        <EditorialRow
+          label="EDITOR'S NOTE"
+          title={
+            <>
+              Space & Time:
+              <br />
+              A Note from Celine Song
+            </>
+          }
+          img="/images/page/editors_note/past_lives_hero.png"
+          link="/editors-note/past-lives"
+          readMore={true}
+        />
 
         <AboutSection />
 
