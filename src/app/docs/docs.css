@@ -75,119 +75,100 @@
     margin-left: auto;
 }
 
-/* ===== Article Cards ===== */
+/* ===== Article Cards / Editorial Rows ===== */
 .docs-articles {
-    margin-top: 5.2083vw;
     display: flex;
     flex-direction: column;
-    gap: 5.2083vw;
+    gap: 7.8125vw; /* 150px gap like collections */
+    margin-top: 5.2083vw;
+    margin-bottom: 7.8125vw;
 }
 
-.article-card {
-    display: grid;
-    grid-template-columns: 62.5000vw 1fr;
-    gap: 2.0833vw;
-    align-items: start;
-}
-
-.article-card.reverse {
-    grid-template-columns: 1fr 62.5000vw;
-}
-
-/* ===== Article Image ===== */
-.article-img {
+.editorial-row.collection-row {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 39.0625vw;
-    border-radius: 0.4688vw;
-    overflow: hidden;
-    box-shadow: 0 0.2083vw 0.2083vw rgba(0, 0, 0, 0.25);
+    padding: 0;
+    gap: 2.6042vw;
 }
 
-.article-img img {
+.editorial-row.collection-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.editorial-text.col-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.editorial-image.col-image {
+    width: 46.0417vw; /* 884px at 1920px */
+    flex: 0 0 auto;
+}
+
+.editorial-image.col-image .editorial-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
-/* ===== Article Info ===== */
-.article-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 39.0625vw;
-    padding-top: 1.4583vw;
-}
-
-.article-label {
+.editorial-label.col-kicker {
     font-family: var(--font-oswald), sans-serif;
-    font-weight: 300;
-    font-size: 1.2500vw;
-    color: #9F9BA8;
-    letter-spacing: 0.0521vw;
+    font-size: 0.7292vw; /* 14px */
+    color: #999;
+    margin-bottom: 1.0417vw;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.article-title {
+.editorial-title.col-title {
     font-family: var(--font-bebas-neue), sans-serif;
-    font-size: 5.7292vw;
-    line-height: 1;
-    color: #000;
-    margin: 0;
-    letter-spacing: -0.0260vw;
+    font-weight: 160;
+    font-size: 8.3333vw; /* 160px */
+    line-height: 7.2917vw; /* 140px */
+    color: #2B2929;
+    margin-bottom: 1.5625vw;
+}
+
+.editorial-title.col-title.align-right {
+    text-align: right;
+}
+
+.editorial-text.col-text.right {
+    align-items: flex-end;
 }
 
 .read-more {
-    display: flex;
-    align-items: center;
-    gap: 2.4740vw;
     font-family: var(--font-oswald), sans-serif;
-    font-weight: 400;
-    font-size: 2.0833vw;
+    font-size: 0.8333vw; /* 16px */
     color: #000;
-    margin-bottom: 1.0417vw;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5208vw;
+    text-transform: uppercase;
+    margin-top: 1.0417vw;
 }
 
 .read-more-arrow {
-    width: 3.8802vw;
-    height: 1.4063vw;
+    width: 1vw; /* Smaller arrow like collections */
+    height: auto;
 }
 
-/* ===== Reverse card: text left ===== */
-.article-card.reverse .article-info {
-    padding-left: 5.2083vw;
-}
+/* Fix font size and image size below 1400px */
+@media (max-width: 1400px) {
+    .editorial-title.col-title {
+        font-size: 116.67px;
+        line-height: 102.08px;
+    }
 
-/* ===== Tall Image (Arco) ===== */
-.article-img.tall {
-    height: 89.1146vw;
-}
-
-.article-img.tall + .article-info,
-.article-card .article-img.tall ~ .article-info {
-    height: 89.1146vw;
-}
-
-.article-card.reverse:has(.article-img.tall) .article-info {
-    height: 89.1146vw;
-}
-
-/* ===== Overlay Text on Image ===== */
-.article-img.overlay-card {
-    position: relative;
-}
-
-.img-overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    font-family: var(--font-oswald), sans-serif;
-    font-weight: 500;
-    font-size: 5.0000vw;
-    line-height: 5.6250vw;
-    color: #DDD6C8;
-    padding: 0.5208vw 1.0417vw;
-    pointer-events: none;
+    .editorial-image.col-image {
+        flex: 0 0 644.58px;
+        width: 644.58px;
+        min-width: 644.58px;
+    }
 }
 
 /* ===== Tab Content Visibility ===== */
