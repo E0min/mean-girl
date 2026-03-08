@@ -152,7 +152,7 @@ export default function Docs() {
       img: "/images/page/docs/minary.png",
       link: "#",
       reverse: false,
-      textSide: "right" as const,
+      textSide: "left" as const,
       imgSide: "left" as const,
       readMore: true,
     },
@@ -194,7 +194,7 @@ export default function Docs() {
       img: "/images/page/docs/montblanc.png",
       link: "#",
       reverse: false,
-      textSide: "right" as const,
+      textSide: "left" as const,
       imgSide: "left" as const,
       readMore: true,
     },
@@ -244,10 +244,6 @@ export default function Docs() {
               ))}
             </section>
           )}
-        </div>
-
-        <div className="show-more">
-          <span>SHOW MORE</span>
         </div>
 
         {/* About Section */}

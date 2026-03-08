@@ -34,7 +34,7 @@ export default function EditorialRow({
   const labelClass = `editorial-label col-kicker`; // Mapping label to kicker for existing CSS
   const titleClass = `editorial-title col-title ${alignRight ? "align-right" : ""}`;
   const imageClass = `editorial-image col-image ${imgSide}`;
-  const readMoreClass = `editorial-read-more read-more`;
+  const readMoreClass = `read-more-arrow`;
 
   const content = (
     <div className={rowClass}>
@@ -45,7 +45,7 @@ export default function EditorialRow({
         </h2>
         {readMore && (
           <div className="read-more">
-            <img src="/images/page/docs/arrow_right.svg" alt="" className="read-more-arrow" />
+            <img src="/images/page/docs/arrow_right.svg" alt="" className={readMoreClass} />
             READ MORE
           </div>
         )}
