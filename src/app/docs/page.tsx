@@ -14,7 +14,17 @@ export default function Docs() {
   const articles = [
     {
       label: "ARTICLE",
-      title: "The Film Everyone Is Arguing About: Sirāt",
+      title: (
+        <>
+          The Film
+          <br />
+          Everyone Is
+          <br />
+          Arguing
+          <br />
+          About: Sirāt
+        </>
+      ),
       img: "/images/page/docs/sirat.png",
       link: "/docs/sirat",
       reverse: false,
@@ -24,7 +34,17 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "Space & Time: A Note from Celine Song",
+      title: (
+        <>
+          Space & Time:
+          <br />
+          A Note
+          <br />
+          from
+          <br />
+          Celine Song
+        </>
+      ),
       img: "/images/page/docs/past_lives.png",
       link: "/docs/past-lives",
       reverse: true,
@@ -34,7 +54,17 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "Joker: Folie à Deux There Is No Joker",
+      title: (
+        <>
+          Joker:
+          <br />
+          Folie à Deux
+          <br />
+          There Is
+          <br />
+          No Joker
+        </>
+      ),
       img: "/images/page/docs/joker_folie_a_deux.png",
       link: "#",
       reverse: false,
@@ -44,7 +74,17 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "Space & Time: A Note from Celine Song",
+      title: (
+        <>
+          Space & Time:
+          <br />
+          A Note
+          <br />
+          from
+          <br />
+          Celine Song
+        </>
+      ),
       img: "/images/page/docs/midsommar.png",
       link: "/docs/past-lives",
       reverse: true,
@@ -54,7 +94,17 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "A Dangerous Woman: Too Much for Her Age",
+      title: (
+        <>
+          A Dangerous
+          <br />
+          Woman:
+          <br />
+          Too Much for
+          <br />
+          Her Age
+        </>
+      ),
       img: "/images/page/docs/fourthgrader_bogyeong.png",
       link: "#",
       reverse: false,
@@ -67,7 +117,21 @@ export default function Docs() {
   const zines = [
     {
       label: "ARTICLE",
-      title: "Arco: A Rainbow Adventure of Time Travel & Friendship",
+      title: (
+        <>
+          Arco:
+          <br />
+          A Rainbow
+          <br />
+          Adventure of
+          <br />
+          Time Travel
+          <br />
+          &
+          <br />
+          Friendship
+        </>
+      ),
       img: "/images/page/docs/arco.png",
       link: "#",
       reverse: true,
@@ -77,8 +141,16 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "How to Paint a Movie: MinarI",
-      img: "/images/page/docs/minari.png",
+      title: (
+        <>
+          How to Paint
+          <br />
+          a Movie:
+          <br />
+          MinarI
+        </>
+      ),
+      img: "/images/page/docs/minary.png",
       link: "#",
       reverse: false,
       textSide: "right" as const,
@@ -87,7 +159,19 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "Poster Boy: Sean Baker (& his Chihuahuas)",
+      title: (
+        <>
+          Poster Boy:
+          <br />
+          Sean Baker
+          <br />
+          (&
+          <br />
+          his
+          <br />
+          Chihuahuas)
+        </>
+      ),
       img: "/images/page/docs/poster_boy.png",
       link: "#",
       reverse: true,
@@ -97,7 +181,17 @@ export default function Docs() {
     },
     {
       label: "ARTICLE",
-      title: "Wes Anderson Returns to Montblanc",
+      title: (
+        <>
+          Wes
+          <br />
+          Anderson
+          <br />
+          Returns to
+          <br />
+          Montblanc
+        </>
+      ),
       img: "/images/page/docs/montblanc.png",
       link: "#",
       reverse: false,
@@ -175,6 +269,7 @@ export default function Docs() {
           </div>
         </footer>
       </div>
+      <Footer />
     </main>
   );
 }
