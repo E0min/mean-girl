@@ -2,12 +2,17 @@
 
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
-import EditorialRow from "@/components/EditorialRow";
+import EditorialRow, { EditorialRowProps } from "@/components/EditorialRow";
 import Link from "next/link";
 import "./collections.css";
 
+// Interface for collections to match EditorialRowProps
+interface CollectionItem extends EditorialRowProps {
+  key?: number;
+}
+
 export default function CollectionsLists() {
-  const collections = [
+  const collections: CollectionItem[] = [
     {
       label: (
         <>
@@ -120,12 +125,18 @@ export default function CollectionsLists() {
             Mean girls
           </Link>
           <nav className="mini-nav">
-            <Link href="/all-films" style={{ color: "#90FC82" }}>All Films</Link>
+            <Link href="/all-films" style={{ color: "#90FC82" }}>
+              All Films
+            </Link>
             <Link href="/collections" className="active" style={{ color: "#90FC82" }}>
               Collections
             </Link>
-            <Link href="/docs" style={{ color: "#90FC82" }}>Docs</Link>
-            <a href="#" style={{ color: "#90FC82" }}>About</a>
+            <Link href="/docs" style={{ color: "#90FC82" }}>
+              Docs
+            </Link>
+            <a href="#" style={{ color: "#90FC82" }}>
+              About
+            </a>
           </nav>
         </div>
 
@@ -136,13 +147,18 @@ export default function CollectionsLists() {
             className="page-title-svg-collections"
           />
           {/* Scroll Arrow sometimes present in Figma designs for this page */}
-          <img src="/images/page/home/scroll_arrow.svg" alt="" className="scroll-arrow-down" style={{ 
-            position: "absolute", 
-            right: "33%", 
-            top: "50%", 
-            transform: "translateY(-50%)",
-            width: "3.125vw"
-          }} />
+          <img
+            src="/images/page/home/scroll_arrow.svg"
+            alt=""
+            className="scroll-arrow-down"
+            style={{
+              position: "absolute",
+              right: "33%",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "3.125vw",
+            }}
+          />
         </div>
       </header>
 
@@ -154,13 +170,17 @@ export default function CollectionsLists() {
         </section>
 
         <AboutSection />
-        
+
         <footer className="main-footer">
           <div className="footer-logo">
             <div className="footer-logo-wrapper">
               <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
               <div className="footer-pill">
-                <img src="/images/page/home/footer_anatomy.png" alt="Anatomy of a Fall" className="footer-img-bg" />
+                <img
+                  src="/images/page/home/footer_anatomy.png"
+                  alt="Anatomy of a Fall"
+                  className="footer-img-bg"
+                />
               </div>
             </div>
           </div>

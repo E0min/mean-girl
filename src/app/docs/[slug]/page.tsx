@@ -32,7 +32,15 @@ export default function DocDetailPage() {
     return (
       <main>
         <Header />
-        <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: "#C45481" }}>
+        <div
+          style={{
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#C45481",
+          }}
+        >
           <h1>Loading...</h1>
         </div>
         <Footer />
@@ -46,7 +54,9 @@ export default function DocDetailPage() {
         <Header />
         <div style={{ padding: "100px", textAlign: "center", color: "#C45481" }}>
           <h1>Article Not Found</h1>
-          <Link href="/docs" style={{ textDecoration: "underline" }}>Back to Docs</Link>
+          <Link href="/docs" style={{ textDecoration: "underline" }}>
+            Back to Docs
+          </Link>
         </div>
         <Footer />
       </main>
@@ -68,19 +78,19 @@ export default function DocDetailPage() {
             <h1 className="article-title">{movie.title}</h1>
             <div className="article-meta-row">
               <span className="article-share">SHARE</span>
-              <span className="article-author">Editor's Note</span>
+              <span className="article-author">Editor&apos;s Note</span>
             </div>
           </div>
 
-          <div 
+          <div
             className="article-body article-body-kr"
             dangerouslySetInnerHTML={{ __html: movie.content }}
           />
         </article>
 
         <AboutSection />
-        
-        <Footer 
+
+        <Footer
           pillImg={movie.footerImg || movie.heroImg}
           title={movie.title}
           year={movie.year}

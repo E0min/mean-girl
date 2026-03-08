@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-interface EditorialRowProps {
+export interface EditorialRowProps {
   label?: React.ReactNode;
   title: React.ReactNode;
   img: string;
