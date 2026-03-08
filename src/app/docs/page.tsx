@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import EditorialRow from "@/components/EditorialRow";
-import Link from "next/link";
 import "./docs.css";
 
 export default function Docs() {
@@ -28,7 +27,7 @@ export default function Docs() {
       img: "/images/page/docs/sirat.png",
       link: "/docs/sirat",
       reverse: false,
-      textSide: "right" as const,
+      textSide: "left" as const,
       imgSide: "left" as const,
       readMore: true,
     },
@@ -68,7 +67,7 @@ export default function Docs() {
       img: "/images/page/docs/joker_folie_a_deux.png",
       link: "#",
       reverse: false,
-      textSide: "right" as const,
+      textSide: "left" as const,
       imgSide: "left" as const,
       readMore: true,
     },
@@ -108,7 +107,7 @@ export default function Docs() {
       img: "/images/page/docs/fourthgrader_bogyeong.png",
       link: "#",
       reverse: false,
-      textSide: "right" as const,
+      textSide: "left" as const,
       imgSide: "left" as const,
       readMore: true,
     },
@@ -253,21 +252,6 @@ export default function Docs() {
 
         {/* About Section */}
         <AboutSection />
-
-        <footer className="main-footer">
-          <div className="footer-logo">
-            <div className="footer-logo-wrapper">
-              <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
-              <div className="footer-pill">
-                <img
-                  src="/images/page/docs/past_lives.png"
-                  alt="Footer"
-                  className="footer-img-bg"
-                />
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
       <Footer />
     </main>

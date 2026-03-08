@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import Link from "next/link";
@@ -8,19 +7,43 @@ import "../collections.css";
 
 export default function CollectionsItem() {
   const column1 = [
-    { name: "Starlet", img: "/images/page/collections/sean_baker/Starlet.png", type: "portrait-tall" },
-    { name: "Left-Handed Girl", img: "/images/page/collections/sean_baker/Left-handed-girl2.png", type: "landscape" },
+    {
+      name: "Starlet",
+      img: "/images/page/collections/sean_baker/Starlet.png",
+      type: "portrait-tall",
+    },
+    {
+      name: "Left-Handed Girl",
+      img: "/images/page/collections/sean_baker/Left-handed-girl2.png",
+      type: "landscape",
+    },
   ];
 
   const column2 = [
-    { name: "The Florida Project", img: "/images/page/collections/sean_baker/TheFloridaProject1.png", type: "landscape" },
-    { name: "The Florida Project", img: "/images/page/collections/sean_baker/TheFloridaProject2.png", type: "landscape" },
+    {
+      name: "The Florida Project",
+      img: "/images/page/collections/sean_baker/TheFloridaProject1.png",
+      type: "landscape",
+    },
+    {
+      name: "The Florida Project",
+      img: "/images/page/collections/sean_baker/TheFloridaProject2.png",
+      type: "landscape",
+    },
     { name: "Anora", img: "/images/page/collections/sean_baker/Anora.png", type: "landscape" },
   ];
 
   const column3 = [
-    { name: "Tangerine", img: "/images/page/collections/sean_baker/Tangerine.png", type: "portrait-tall" },
-    { name: "Left-Handed Girl", img: "/images/page/collections/sean_baker/Left-handed-girl1.png", type: "portrait-tall" },
+    {
+      name: "Tangerine",
+      img: "/images/page/collections/sean_baker/Tangerine.png",
+      type: "portrait-tall",
+    },
+    {
+      name: "Left-Handed Girl",
+      img: "/images/page/collections/sean_baker/Left-handed-girl1.png",
+      type: "portrait-tall",
+    },
   ];
 
   return (
@@ -31,12 +54,18 @@ export default function CollectionsItem() {
             Mean girls
           </Link>
           <nav className="mini-nav">
-            <Link href="/all-films" style={{ color: "#90FC82" }}>All Films</Link>
+            <Link href="/all-films" style={{ color: "#90FC82" }}>
+              All Films
+            </Link>
             <Link href="/collections" className="active" style={{ color: "#90FC82" }}>
               Collections
             </Link>
-            <Link href="/docs" style={{ color: "#90FC82" }}>Docs</Link>
-            <a href="#" style={{ color: "#90FC82" }}>About</a>
+            <Link href="/docs" style={{ color: "#90FC82" }}>
+              Docs
+            </Link>
+            <a href="#" style={{ color: "#90FC82" }}>
+              About
+            </a>
           </nav>
         </div>
 
@@ -50,7 +79,9 @@ export default function CollectionsItem() {
       </header>
 
       <div className="content-wrapper">
-        <h2 className="section-subtitle" style={{ color: "#EB3DF7" }}>DIRECTOR</h2>
+        <h2 className="section-subtitle" style={{ color: "#EB3DF7" }}>
+          DIRECTOR
+        </h2>
 
         <section className="sb-content">
           <div className="sb-header-title">
@@ -59,22 +90,6 @@ export default function CollectionsItem() {
               alt="Collections Director Sean Baker"
               className="sb-header-svg"
             />
-          </div>
-
-          <div className="sb-hero-section">
-            <div className="sb-hero-portrait">
-              <img src="/images/page/collections/sean_baker.png" alt="Sean Baker" />
-            </div>
-            <div className="sb-hero-info">
-              <span className="sb-info-role">DIRECTOR OF ANORA</span>
-              <h3 className="sb-info-name">
-                SEAN<br />BAKER
-              </h3>
-              <p className="sb-info-quote">
-                “I don’t think you can pin this movie down and describe it easily as one thing. 
-                As the story and feeling changes, our approach and the language changes also.”
-              </p>
-            </div>
           </div>
 
           <div className="hotgirls-three-columns">
@@ -114,17 +129,6 @@ export default function CollectionsItem() {
         </section>
 
         <AboutSection />
-        
-        <footer className="main-footer">
-          <div className="footer-logo">
-            <div className="footer-logo-wrapper">
-              <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
-              <div className="footer-pill">
-                <img src="/images/image 1446.png" alt="Anatomy of a Fall" className="footer-img-bg" />
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
       <Footer />
     </main>

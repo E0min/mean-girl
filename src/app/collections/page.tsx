@@ -76,24 +76,24 @@ export default function CollectionsLists() {
       imgSide: "right",
     },
     {
-      label: "ARTICLE",
       title: (
         <>
-          HOW
+          HUMAN
           <br />
-          TO PAINT
+          BEHAVIOR
           <br />
-          A MOVIE:
+          OBSERVED
           <br />
-          MINARI
+          RUBEN OSTLUND
         </>
       ),
-      img: "/images/page/collections/minary.png",
+      label: "DIRECTOR OF TRIANGLE OF SADNESS",
+      img: "/images/page/collections/ruben.png",
       reverse: true,
       textSide: "right",
       imgSide: "left",
       alignRight: true,
-      readMore: true,
+      readMore: false,
     },
     {
       label: "DIRECTOR OF No other choice",
@@ -140,26 +140,7 @@ export default function CollectionsLists() {
           </nav>
         </div>
 
-        <div className="header-main" style={{ position: "relative" }}>
-          <img
-            src="/images/page/collections/collections.svg"
-            alt="COLLECTIONS"
-            className="page-title-svg-collections"
-          />
-          {/* Scroll Arrow sometimes present in Figma designs for this page */}
-          <img
-            src="/images/page/home/scroll_arrow.svg"
-            alt=""
-            className="scroll-arrow-down"
-            style={{
-              position: "absolute",
-              right: "33%",
-              top: "50%",
-              transform: "translateY(-50%)",
-              width: "3.125vw",
-            }}
-          />
-        </div>
+        <div className="header-main" style={{ position: "relative" }}></div>
       </header>
 
       <div className="content-wrapper">
@@ -170,21 +151,6 @@ export default function CollectionsLists() {
         </section>
 
         <AboutSection />
-
-        <footer className="main-footer">
-          <div className="footer-logo">
-            <div className="footer-logo-wrapper">
-              <img src="/images/svg/me n.svg" alt="ME N" className="men-svg" />
-              <div className="footer-pill">
-                <img
-                  src="/images/page/home/footer_anatomy.png"
-                  alt="Anatomy of a Fall"
-                  className="footer-img-bg"
-                />
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
       <Footer />
     </main>
