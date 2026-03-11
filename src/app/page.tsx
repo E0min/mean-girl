@@ -175,7 +175,7 @@ export default function Home() {
         {/* COLLECTIONS */}
         <section className="section collections">
           <h2 className="section-title">COLLECTIONS</h2>
-          <div className="collections-container">
+          <Link href="/collections/collections-item" className="collections-container">
             <div className="pink-card">
               <span className="role-label">DIRECTOR OF ANORA</span>
               <h3 className="name-title">
@@ -191,7 +191,7 @@ export default function Home() {
             <div className="photo-card">
               <img src="/images/page/home/sean_baker.png" alt="Sean Baker" className="portrait" />
             </div>
-          </div>
+          </Link>
         </section>
 
         {/* AWARD WINNERS */}
