@@ -307,8 +307,10 @@
 
 .portrait {
     height: 100%;
-    width: 100%;
+    width: 100%; /* 우측 50%만 보여주기 위해 너비를 부모의 2배로 설정 */
+    max-width: none; /* 부모 너비 제한 무시 */
     object-fit: cover;
+    object-position: right center; /* 우측 50%를 부모 영역에 맞춤 */
     display: block;
 }
 
